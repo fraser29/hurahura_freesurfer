@@ -4,7 +4,7 @@
 
 @author: Fraser M Callaghan
 
-Organisation and management of KISPI CLINICAL PIPELINE work
+Use of hurahura to setup and manage freesurfer runs
 
 """
 
