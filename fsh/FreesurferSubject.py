@@ -60,24 +60,11 @@ class FreesurferSubjectList(mi_subject.SubjectList):
 #      THIS IS FREESURFER-HURAHURA SPECIFIC COMMAND LINE ACTIONS
 ### ====================================================================================================================
 def freesurfer_specific_actions(args):
-    if args.addANON is not None: 
-        if len(args.subjNList) != 1:
-            raise ValueError(f"For addANON - need 1 and only 1 subject")
-        for sn in args.subjNList:
-            iSubj = args.MISubjClass(sn, args.dataRoot, args.subjPrefix)
-            if iSubj.exists():
-                iSubj.addAnonData(anonPath=args.addANON)
-    if args.pseudoCT:
-        for sn in args.subjNList:
-            iSubj = args.MISubjClass(sn, args.dataRoot, args.subjPrefix)
-            if iSubj.exists():
-                iSubj.runPseudoCT_pipeline()
+    pass
 
 
 def getArgGroup():
     groupFreesurfer = miresearch_main.ParentAP.add_argument_group('Freesurfer Actions')
-    groupFreesurfer.add_argument('-addANON', dest='addANON', help='Add anonymised data to subject and execute ZTE4D-DL pipeline', type=str, default=None)
-    groupFreesurfer.add_argument('-pseudoCT', dest='pseudoCT', help='Run pipeline for pseudoCT', action='store_true')
     return groupFreesurfer
     ##
 
